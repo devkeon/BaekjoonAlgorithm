@@ -11,12 +11,12 @@ int main() {
 	cin >> t;
 	vector<int> ans;
 	
-	for (int l = 1; l <= 30; l++) {  //¾ç ³¡ °ª °è»ê
+	for (int l = 1; l <= 30; l++) {  //ì–‘ ë ê°’ ê³„ì‚°
 		dp[l][0] = 1;
 		dp[l][l] = 1;
 	}
 
-	for (int k = 2; k <= 30; k++) {  //30±îÁöÀÇ Á¶ÇÕ ¼ö °è»ê
+	for (int k = 2; k <= 30; k++) {  //30ê¹Œì§€ì˜ ì¡°í•© ìˆ˜ ê³„ì‚°
 		for (int h = 1; h <= k; h++) {
 			dp[k][h] = dp[k - 1][h - 1] + dp[k - 1][h];
 		}
@@ -27,7 +27,7 @@ int main() {
 		cin >> n >> m;
 		ans.push_back(dp[m][n]);
 	}
-	for (int j = 0; j < t; j++)  //Ãâ·Â
+	for (int j = 0; j < t; j++)  //ì¶œë ¥
 		cout << ans[j] << "\n";
 
 	return 0;
